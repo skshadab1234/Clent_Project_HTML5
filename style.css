@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+	font-family: 'Roboto', sans-serif;
+	position: relative;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+i {
+	margin-right: 10px;
+}
+/*----------multi-level-accordian-menu------------*/
+.navbar-logo{
+	padding: 15px;
+	color: #fff;
+	z-index: 1
+}
+.navbar-mainbg{
+	background-color: transparent;
+	padding: 0px;
+}
+#navbarSupportedContent{
+	overflow: hidden;
+	position: relative;
+	z-index: 1
+}
+#navbarSupportedContent ul{
+	padding: 0px;
+	margin: 0px;
+}
+#navbarSupportedContent li {
+	list-style-type: none;
+	float: left;
+}
+#navbarSupportedContent ul li a{
+	color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    opacity: .6;
+    padding: 20px 20px;
+    transition-duration:0.6s;
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+}
+#navbarSupportedContent>ul>li.active>a{
+	color: #fff;
+	opacity: 1;
+	background-color: transparent;
+	transition: all 0.7s;
+}
+#navbarSupportedContent a:not(:only-child):after {
+	content: "\f105";
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	font-size: 14px;
+	font-family: "Font Awesome 5 Free";
+	display: inline-block;
+	padding-right: 3px;
+	vertical-align: middle;
+	font-weight: 900;
+	transition: 0.5s;
+}
+#navbarSupportedContent .active>a:not(:only-child):after {
+	transform: rotate(90deg);
+}
+.hori-selector{
+	max-height: 5%;
+	position:absolute;
+	border-radius: 10px;	
+	top:0px;
+	left: 0px;
+	transition-duration:0.6s;
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	background-color: #FFA500;
+}
+
+.main-body{
+	height: 80vh;
+}
+
+.main-footer{
+	height: 20vh;
+}
+
+.info {
+	position: relative;
+	left: 60%;
+	top: 40%;
+	transform: translate(-50%,-40%);
+	z-index: 1;
+}
+
+.info .tagline{
+	position: relative;
+	font-size: 16px;	
+	font-family: ui-sans-serif;
+	color: #fdfdfd 
+}
+.info .tagline:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    border-radius: 10px;
+    width: 39px;
+    height: 15%;
+    background: orangered;
+    top: -12px;
+}
+.info .title {
+	font-weight: 700;
+    font-size: 4rem;
+    color: #fdfdfd;
+    text-shadow: 1px 2px black;
+}
+
+.info p
+{
+	color: #fdfdfd;
+	letter-spacing: 1px
+}
+
+
+main {
+  height: 100%;
+}
+
+.green-box {
+  height: 350px;
+  background: #70c26f;
+}
+
+.tile-container {
+  width: 1400px;
+  position: absolute;
+  top: 275px;
+  left: 0;
+  text-align: center;
+  user-select: none;
+  z-index: 4;	
+}
+
+.tile {
+  width: 200px;
+  height: 350px;
+  margin-left: 50px;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 5%;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.page-container {
+  visibility: hidden;
+}
+
+.page {
+  cursor: pointer;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+.hero-1 {
+  background-image:url(https://cdn.wallpapersafari.com/77/77/w1kILe.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-2 {
+  background-image:url(https://i.pinimg.com/originals/de/bd/68/debd686e82acf050c80c1393192f55d4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-3 {
+  background-image:url(https://ep1.pinkbike.org/p4pb13396384/p4pb13396384.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-4 {
+  background-image:url(https://www.betterwalls.ch/pim/pr/WP/30009576/photo-wallpaper-sunset-ride_big01.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (max-width: 991px){
+	#navbarSupportedContent ul li a{
+		padding: 12px 30px;
+	}
+	.hori-selector{
+		max-width: 10px;
+		max-height: 10px;
+		margin-top: 18px;
+		margin-left: 10px;
+		border-radius: 50%;
+	}
+}
