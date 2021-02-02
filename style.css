@@ -88,46 +88,66 @@ i {
 	height: 20vh;
 }
 
-.info {
-	position: relative;
-	left: 60%;
-	top: 40%;
-	transform: translate(-50%,-40%);
-	z-index: 1;
+.dummy_data.active > .container1 , .info1.active > #container1 , .info2.active > #container1 , .info3.active > #container1 , .info4.active > #container1{
+	display: block;
 }
 
-.info .tagline{
-	position: relative;
-	font-size: 16px;	
-	font-family: ui-sans-serif;
-	color: #fdfdfd 
-}
-.info .tagline:before{
-    content: '';
-    position: absolute;
-    left: 0;
-    border-radius: 10px;
-    width: 39px;
-    height: 15%;
-    background: orangered;
-    top: -12px;
-}
-.info .title {
-	font-weight: 700;
-    font-size: 4rem;
-    color: #fdfdfd;
-    text-shadow: 1px 2px black;
+#container1{
+  color:#999;
+  text-transform: uppercase;
+  font-size:36px;
+  font-weight:bold;
+  padding-top:200px;  
+  position:fixed;
+  width:100%;
+  bottom:45%;
+  display:block;
+  z-index: 1;
+  display: none;
 }
 
-.info p
-{
-	color: #fdfdfd;
-	letter-spacing: 1px
+#flip {
+  height:50px;
+  overflow:hidden;
+}
+
+#flip > div > div {
+  color:#fff;
+  padding:4px 12px;
+  height:45px;
+  margin-bottom:45px;
+  display:inline-block;
+}
+
+#flip div:first-child {
+  animation: show 4s linear infinite;
+}
+
+#flip div div {
+  background:#42c58a;
+}
+#flip div:first-child div {
+  background:#4ec7f3;
+}
+#flip div:last-child div {
+  background:#DC143C;
+}
+
+@keyframes show {
+  0% {margin-top:-270px;}
+  5% {margin-top:-180px;}
+  33% {margin-top:-180px;}
+  38% {margin-top:-90px;}
+  66% {margin-top:-90px;}
+  71% {margin-top:0px;}
+  99.99% {margin-top:0px;}
+  100% {margin-top:-270px;}
 }
 
 
 main {
   height: 100%;
+  overflow: hidden;
 }
 
 .green-box {
@@ -136,20 +156,21 @@ main {
 }
 
 .tile-container {
-  width: 1400px;
   position: absolute;
   top: 275px;
   left: 0;
   text-align: center;
   user-select: none;
   z-index: 4;	
+  display: flex;
+  width: 99999px;
 }
 
 .tile {
   width: 200px;
   height: 350px;
   margin-left: 50px;
-  cursor: pointer;
+  pointer-events: none;
   display: inline-block;
   border-radius: 5%;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -173,25 +194,89 @@ main {
   background-image:url(https://cdn.wallpapersafari.com/77/77/w1kILe.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hero-2 {
-  background-image:url(https://i.pinimg.com/originals/de/bd/68/debd686e82acf050c80c1393192f55d4.jpg);
+  background-image:url(https://wallpaperaccess.com/full/166870.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hero-3 {
-  background-image:url(https://ep1.pinkbike.org/p4pb13396384/p4pb13396384.jpg);
+  background-image:url(https://www.wallpapers.net/mountain-bike-wallpaper-for-desktop-mobiles/download/5120x2160.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hero-4 {
   background-image:url(https://www.betterwalls.ch/pim/pr/WP/30009576/photo-wallpaper-sunset-ride_big01.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
+
+.progress_bar{
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    z-index: 1;
+    background: orangered;
+    transition: 5s ease all;
+}
+
+.controls{
+	position: relative;
+}
+
+.controls button {
+	width: 80px;
+	height: 80px;
+	background: none;
+	outline: none;
+	border-radius: 50%;
+	margin-left: 10px;
+	border: 1px solid  #fff
+}
+.controls button i{
+	font-size: 25px;
+	color: #fff;
+}
+
+.controls button i:nth-child(1){
+	margin-left: 10px;
+}
+
+.progress_done {
+	width: 100%;
+    background: #c1c1c1;
+    height: 4px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(3px);
+    border-radius: 5px;
+}
+.progress_indicator {
+  border-radius: 5px;
+  height: 4px;
+  background: orangered;
+  width: 0%;
+  transition: 2s ease-in-out all;
+}
+
+.counter h2{
+	font-size: 3rem;
+    position: relative;
+    top: 12%;
+    color: #fff;
+    font-weight: 800;
+    font-family: fantasy;
+}
+
 @media (max-width: 991px){
 	#navbarSupportedContent ul li a{
 		padding: 12px 30px;

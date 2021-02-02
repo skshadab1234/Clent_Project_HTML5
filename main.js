@@ -38,40 +38,71 @@ $(".navbar-toggler").click(function(){
   setTimeout(function(){ test(); });
 });
 
+$(document).ready(()=>{
 
 var root = document.documentElement;
 var body = document.body;
 var pages = document.querySelectorAll(".page");
 var tiles = document.querySelectorAll(".tile");
+var info = document.querySelectorAll(".info");
 
 for (var i = 0; i < tiles.length; i++) {
   addListeners(tiles[i], pages[i]);
 }
+
 
 function addListeners(tile, page) {
   
   var delay = 0;
   var transition = 0;
   var delayMilliseconds = 5000;
+  var progress_indicator = 0;
+  var inc = 1
+  var active='';
 
-  function doTimeoutStuff(i, delay, transition) {
+  function doTimeoutStuff(i, delay, transition,progress_indicator,inc,active) {
       setTimeout(function () {
           $('.tile'+i).trigger('click');
-          $('.tile-container').css({"transform": "translateX(-"+transition+"px)",'transition':'2s ease'});
+          if (i>0) {
+            $('.dummy_data').removeClass('active');
+            $('.info'+i).addClass(active);
+          }
+
+          setTimeout(()=>{
+            $('.info'+i--).removeClass('active');
+          },4500);
+          // progeress bar top header
+          if ($('.progress_bar').width() > 1) {
+            $(".progress_bar").css({"display":"none","width":"0vw"});
+          }else{
+            $(".progress_bar").css({"display":"block","width":"100vw"});
+          }
+
+          $(".progress_indicator").css({"width":progress_indicator+'%'});
+          $(".counter h2").html('0'+inc);
+
+          if (transition > 1) {
+            $('.tile-container').css({"transform": "translateX(-"+transition+"px)",'transition':'2s ease'});
+          }
+          // $('.tile'+i).clone().insertBefore('.append_before');
       }, delay);
   }
 
   for (var i=0; i < tiles.length + 1; i++) {
       delay = i*delayMilliseconds;
-      transition = transition + 210;
-      doTimeoutStuff(i, delay,transition);
+      if (i>0) {
+        transition = transition + 210;
+        progress_indicator = progress_indicator + (100/tiles.length);
+        inc++;
+        active='active';
+      }
+
+      doTimeoutStuff(i, delay,transition,progress_indicator,inc,active);
   }
  
   tile.addEventListener("click", function () {
     animateHero(tile, page);
   });
-
-  
 }
 
 function animateHero(fromHero, toHero) {
@@ -100,7 +131,6 @@ function animateHero(fromHero, toHero) {
   TweenLite.to(clone, 0.5, style);
 
   function onComplete() {
-
     TweenLite.set(toHero, { visibility: "visible" });
     body.removeChild(clone);
   }
@@ -120,7 +150,9 @@ function calculatePosition(element) {
     top: Math.round(rect.top + scrollTop - clientTop),
     left: Math.round(rect.left + scrollLeft - clientLeft),
     height: rect.height,
-    width: rect.width };
+    width: rect.width,
+  };
 
 }
+})
 
