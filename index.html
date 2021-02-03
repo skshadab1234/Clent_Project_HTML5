@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div class="container-fluid" style="background: url('image/3.jpg');width: 100%;height: 100vh;background-position: center;background-size: cover;background-repeat: no-repeat;">
+	<div class="container-fluid" >
 			<nav class="navbar navbar-expand-lg navbar-mainbg">
 		        <a class="navbar-brand navbar-logo" href="#">Zone Work</a>
 		        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,19 +43,7 @@
 
 	<div class="row main-body">
 		<div class="col-12 col-sm-12 col-md-5" >
-			<div class="info dummy_data active" >
-				<div id=container1>
-				  Make 
-				  <div id=flip>
-				    <div><div>wOrK</div></div>
-				    <div><div>lifeStyle</div></div>
-				    <div><div>Everything</div></div>
-				  </div>
-				  AweSoMe!
-				</div>
-			</div>
-
-			<div class="info info1">
+			<div class="info info1 active">
 				<div id=container1>
 				  Make 1
 				  <div id=flip>
@@ -102,40 +90,23 @@
 				  AweSoMe!
 				</div>
 			</div>
-<!-- 
-			<div class="info info2">
-				<h3 class="tagline">3 joff</h1>
-				<h1 class="title">Lorem ipsum</h1>	
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Expedita atque minima quam ab aspernatur iusto inventore quas beatae, molestiae pariatur dolor. Nobis molestiae libero vel optio, tenetur ullam deserunt, numquam.</p>
-			</div>
-
-			<div class="info info3">
-				<h3 class="tagline">4 joff</h1>
-				<h1 class="title">Lorem ipsum</h1>	
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Expedita atque minima quam ab aspernatur iusto inventore quas beatae, molestiae pariatur dolor. Nobis molestiae libero vel optio, tenetur ullam deserunt, numquam.</p>
-			</div>
-
-			<div class="info info4">
-				<h3 class="tagline">5 joff</h1>
-				<h1 class="title">Lorem ipsum</h1>	
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Expedita atque minima quam ab aspernatur iusto inventore quas beatae, molestiae pariatur dolor. Nobis molestiae libero vel optio, tenetur ullam deserunt, numquam.</p>
-			</div> -->
 		</div>
 
 
 		<div class="col-12 col-sm-12 col-md-7" > 
 								
 			<main>  
-			  <div class="tile-container">
-			    <div class="tile hero-1 tile1"></div>
+			  <div class="tile-container" > 
+			    <div class="tile hero-1 tile1" style="display: none;"></div>
 			    <div class="tile hero-2 tile2"></div>
 			    <div class="tile hero-3 tile3"></div>
 			    <div class="tile hero-4 tile4"></div>
+			    <div class="append_before"></div>
 			  </div>  
 			   
 			</main>
 			<div class="page-container">
-			  <div class="page hero-1 page1"></div>
+			  <div class="page hero-1 page1" style="visibility: visible;"></div>
 			  <div class="page hero-2 page2"></div>
 			  <div class="page hero-3 page3"></div>
 			  <div class="page hero-4 page4"></div>
@@ -146,8 +117,8 @@
 	<div class="row main-footer">
 		<div class="col-sm-6" style="z-index: 9999">
 			<div class="controls float-right">
-				<button><i class="fas fa-angle-left"></i></button>
-				<button><i class="fas fa-angle-right"></i></button>
+				<button type="button" id="nextBtn"><i class="fas fa-angle-left"></i></button>
+				<button  type="button" id="prevBtn"><i class="fas fa-angle-right"></i></button>
 			</div>
 		</div>
 
