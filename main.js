@@ -70,6 +70,7 @@ $(document).ready(() => {
       });
     }, 2000)
   }, 4000);
+
   var root = document.documentElement;
   var body = document.body;
   var pages = document.querySelectorAll(".page");
@@ -248,5 +249,17 @@ $(document).ready(() => {
     };
   }
 
-  
-})
+   $defaultviewmode = 'full';
+   $("#toolbar").click(()=>{
+    if ($defaultviewmode == 'full') {
+      $("#toolbar img").attr('src',"image/toolbar_n_icon.png");
+      $defaultviewmode = '';
+      $('.page').css({"height": "20vh","top": "35%","background-size": "contain"});
+    }else{
+      $("#toolbar img").attr('src',"image/toolbar_fs_icon.png");
+      $defaultviewmode = 'full';
+      $('.page').css({"height": "100vh","width": "100vw","top": "0","background-size": "cover"});
+    }
+
+   }); 
+});
