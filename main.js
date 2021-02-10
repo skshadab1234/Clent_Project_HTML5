@@ -45,6 +45,7 @@ $(".navbar-toggler").click(function () {
 });
 
 $(document).ready(() => {
+    
    document.onkeydown = function(e){
         if (e.ctrlKey &&
             (e.keyCode === 67 ||
