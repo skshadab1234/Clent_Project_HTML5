@@ -3,7 +3,6 @@ body {
 	font-family: 'Roboto', sans-serif;
 	position: relative;
 	overflow: hidden;
-	box-sizing: border-box;
 }
 
 * {
@@ -405,7 +404,9 @@ main {
 
 @media (max-width: 600px){
 	.tile-container{
-		left: -443px;
+		left: 100px;
+	    position: fixed;
+	    bottom: 3%;
 	}
 	.tile{
 		width: 150px;
@@ -431,9 +432,6 @@ main {
 }
 
 @media (max-width: 500px){
-	.tile-container{
-		left: -300px;
-	}
 	.controls{display: flex;}
 	.controls button{
 		width: 43px;
@@ -455,8 +453,10 @@ main {
 
 @media (max-width: 400px){
 	.tile-container{
-		left: -250px;
-    	bottom: 2%;
+    	bottom:28%;
+	}
+	.page{
+		height: 56vh;
 	}
 	.controls button {
 	    width: 35px;
@@ -471,10 +471,4 @@ main {
 	    top: 82%;
 	    left: 21px;
 	}   
-}
-
-@media (max-width: 300px){
-	.tile-container{
-		left: -300px;
-	}
 }
