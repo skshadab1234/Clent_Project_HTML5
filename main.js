@@ -74,6 +74,7 @@ $(document).ready(() => {
   var body = document.body;
   var pages = document.querySelectorAll(".page");
   var tiles = document.querySelectorAll(".tile");
+  var count = document.querySelectorAll(".count");
   var info = document.querySelectorAll(".info");
   var tile_container = document.querySelectorAll(".tile-container");
   var count_delay = tiles.length * 5000;
@@ -110,7 +111,6 @@ $(document).ready(() => {
     function doTimeoutStuff(i, delay, transition, progress_indicator, inc, active) {
       setTimeout(function () {
         $('.tile' + i).trigger('click');
-        
         if ($('.progress_bar').width() == 0) {
           $(".progress_bar").css({
             "display": "block",
@@ -130,7 +130,7 @@ $(document).ready(() => {
           },300)
 
         }
-        if (i > 1 ) {
+        if (i > 1 && i < 7 ) {
           $(".progress_indicator").css({
             "width": progress_indicator + '%'
           });
@@ -138,18 +138,20 @@ $(document).ready(() => {
           $(".progress_indicator").css({
             "width": '0%'
           });
+          inc = 1;
         }
         $(".counter h2").html('0' + inc);
-        $('.tile' + (--i)).css('visibility', '');
+        // $('.tile' + (--i)).css('visibility', '');
         $('.page' + (++i)).css('visibility', '');
-
+        $('.tile-container').css({"transform": "translateX(-"+transition+"px)",'transition':'2s ease'});
       }, delay);
     }
 
     for (var i = 1; i < tiles.length + 1; i++) {
       delay = i * delayMilliseconds;
       inc++;
-      progress_indicator = progress_indicator + (100 / tiles.length);
+      transition = transition  + 210;
+      progress_indicator = progress_indicator + (100 / count.length);
       doTimeoutStuff(i, delay, transition, progress_indicator, inc, active);
     }
     tile.addEventListener("click", function () {
@@ -194,22 +196,22 @@ $(document).ready(() => {
       TweenLite.set(toHero, {
         visibility: "visible"
       });
-      TweenLite.set(fromHero, {
-        visibility: ""
-      });
-      setTimeout(() => {
-        TweenLite.set(toHero, {
-          visibility: ""
-        });
-        TweenLite.set(fromHero, {
-          visibility: ""
-        });
-      }, 5000)
-      $('.append_before').append(fromHero);
-      TweenLite.set(fromHero, {
-        visibility: "visible", 
-        immediateRender:false
-      });
+      // TweenLite.set(fromHero, {
+      //   visibility: ""
+      // });
+      // setTimeout(() => {
+      //   TweenLite.set(toHero, {
+      //     visibility: ""
+      //   });
+      //   TweenLite.set(fromHero, {
+      //     visibility: ""
+      //   });
+      // }, 5000)
+      // $('.append_before').append(fromHero);
+      // TweenLite.set(fromHero, {
+      //   visibility: "visible", 
+      //   immediateRender:false
+      // });
       body.removeChild(clone);
     }
   }

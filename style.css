@@ -237,12 +237,16 @@ main {
 .tile-container {
 	position: absolute;
 	bottom: 5%;
-	right: -660px;
+	right: -240%;
 	text-align: center;
 	user-select: none;
 	z-index: 4;
 	display: flex;
 	transform: translateX(-100px);
+	-webkit-transition: transform 0s;
+       -moz-transition: transform 0s;
+         -o-transition: transform 0s;
+            transition: transform 0s;
 }
 
 .tile {
@@ -269,42 +273,42 @@ main {
 	position: fixed;
 }
 
-.hero-1 {
+.hero-1,.hero-7,.hero-12,.hero-18,.hero-24,.hero-30,.hero-36,.hero-42,.hero-48,.hero-54,.hero-60,.hero-66,.hero-72,.hero-78 {
 	background-image: url(image/Slider2.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-.hero-2 {
+.hero-2,.hero-8,.hero-13,.hero-19,.hero-25,.hero-31,.hero-37,.hero-43,.hero-49,.hero-55,.hero-61,.hero-67,.hero-73,.hero-79 {
 	background-image: url(image/Slider1.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-.hero-3 {
+.hero-3,.hero-9,.hero-14,.hero-20,.hero-26,.hero-32,.hero-38,.hero-44,.hero-50,.hero-56,.hero-62,.hero-68,.hero-74,.hero-80 {
 	background-image: url(image/Slider3.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-.hero-4 {
+.hero-4,.hero-10,.hero-15,.hero-21,.hero-27,.hero-33,.hero-39,.hero-45,.hero-51,.hero-57,.hero-63,.hero-69,.hero-75,.hero-81 {
 	background-image: url(image/Slider4.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-.hero-5 {
+.hero-5,.hero-11,.hero-16,.hero-22,.hero-28,.hero-34,.hero-40,.hero-46,.hero-52,.hero-58,.hero-64,.hero-70,.hero-76,.hero-82 {
 	background-image: url(image/Slider5.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-.hero-6 {
+.hero-6,.hero-12,.hero-17,.hero-23,.hero-29,.hero-35,.hero-41,.hero-47,.hero-53,.hero-59,.hero-65,.hero-71,.hero-77,.hero-83 {
 	background-image: url(image/Slider6.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
